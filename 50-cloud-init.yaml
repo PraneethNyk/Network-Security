@@ -1,0 +1,94 @@
+network:
+
+    ethernets:
+
+        eth0:
+
+            addresses:
+
+            - 192.168.51.112/23
+
+            routes:
+
+            - to: default
+
+              via: 192.168.50.1
+
+            match:
+
+                macaddress: 52:54:00:bf:e1:eb
+
+            mtu: 1500
+
+            nameservers:
+
+                addresses:
+
+                - 192.168.50.20
+
+                - 192.168.36.53
+
+                - 192.168.35.52
+
+                search:
+
+                - cse.iith.ac.in
+
+                - ce.iith.ac.in
+
+                - che.iith.ac.in
+
+                - chy.iith.ac.in
+
+                - ee.iith.ac.in
+
+                - maas
+
+                - mae.iith.ac.in
+
+            set-name: eth0
+
+        ens7:
+
+            addresses:
+
+            - 192.168.47.112/23
+
+            match:
+
+                macaddress: 52:54:00:f3:9f:c2
+
+            mtu: 1500
+
+            set-name: ens7
+
+            dhcp4: no
+
+            auth:
+
+              key-management: 802.1x
+
+              method: tls
+
+              identity: xt21t001
+
+              password: U6bnQmHY
+
+              ca-certificate: /ca/ca.crt
+
+              client-certificate: /ca/client.crt
+
+              client-key: /ca/client.key
+
+              radius:
+
+                servers:
+
+                 - address: 192.168.50.7
+
+                   port: 1812
+
+                   secret: testing123
+
+    version: 2
+
